@@ -3,7 +3,7 @@
 const path_ = require('path');
 const url_ = require('url');
 
-let urlPlus = {};
+let urlExtra = {};
 
 function _normalize (url) {
     return url
@@ -18,14 +18,14 @@ function _normalize (url) {
  * @method normalize
  * @param {string} url
  */
-urlPlus.normalize = function (url) {
+urlExtra.normalize = function (url) {
   return _normalize(url);
 };
 
 /**
  * @method join
  */
-urlPlus.join = function () {
+urlExtra.join = function () {
   let joined = [].slice.call(arguments, 0).join('/');
   return _normalize(joined);
 };
@@ -34,7 +34,7 @@ urlPlus.join = function () {
  * @method dirname
  * @param {string} url
  */
-urlPlus.dirname = function (url) {
+urlExtra.dirname = function (url) {
   let dirname = path_.dirname(url);
   if (dirname === '.') {
     return '';
@@ -45,15 +45,15 @@ urlPlus.dirname = function (url) {
 /**
  * @method extname
  */
-urlPlus.extname = path_.extname;
+urlExtra.extname = path_.extname;
 
 /**
  * @method basename
  * @param {string} url
  * @param {string} extname
  */
-urlPlus.basename = function (url, extname) {
-  if (urlPlus.dirname(url) === '') {
+urlExtra.basename = function (url, extname) {
+  if (urlExtra.dirname(url) === '') {
     let basename = path_.basename(url);
     return basename.substring(0, basename.length - 1);
   }
@@ -65,8 +65,8 @@ urlPlus.basename = function (url, extname) {
  * @method basenameNoExt
  * @param {string} url
  */
-urlPlus.basenameNoExt = function (url) {
-  return urlPlus.basename(url, urlPlus.extname(url));
+urlExtra.basenameNoExt = function (url) {
+  return urlExtra.basename(url, urlExtra.extname(url));
 };
 
 /**
@@ -74,7 +74,7 @@ urlPlus.basenameNoExt = function (url) {
  * @param {string} url
  */
 let _queryIndices = {};
-urlPlus.randomQuery = function (url) {
+urlExtra.randomQuery = function (url) {
   let queryIndex = _queryIndices[url] || 0;
   _queryIndices[url] = ++queryIndex;
   if (queryIndex < 10) {
@@ -94,8 +94,8 @@ let _ = {};
 for (let p in url_) {
   _[p] = url_[p];
 }
-for (let p in urlPlus) {
-  _[p] = urlPlus[p];
+for (let p in urlExtra) {
+  _[p] = urlExtra[p];
 }
 
 module.exports = _;

@@ -1,22 +1,22 @@
-# url-plus
+# url-extra
 
-[![Linux Build Status](https://travis-ci.org/electron-utils/url-plus.svg?branch=master)](https://travis-ci.org/electron-utils/url-plus)
-[![Windows Build status](https://ci.appveyor.com/api/projects/status/i80hkk2bea8xbv9j?svg=true)](https://ci.appveyor.com/project/jwu/url-plus)
-[![Dependency Status](https://david-dm.org/electron-utils/url-plus.svg)](https://david-dm.org/electron-utils/url-plus)
-[![devDependency Status](https://david-dm.org/electron-utils/url-plus/dev-status.svg)](https://david-dm.org/electron-utils/url-plus#info=devDependencies)
+[![Linux Build Status](https://travis-ci.org/electron-utils/url-extra.svg?branch=master)](https://travis-ci.org/electron-utils/url-extra)
+[![Windows Build status](https://ci.appveyor.com/api/projects/status/ix4ac549327hgibf?svg=true)](https://ci.appveyor.com/project/jwu/url-extra)
+[![Dependency Status](https://david-dm.org/electron-utils/url-extra.svg)](https://david-dm.org/electron-utils/url-extra)
+[![devDependency Status](https://david-dm.org/electron-utils/url-extra/dev-status.svg)](https://david-dm.org/electron-utils/url-extra#info=devDependencies)
 
 Improved path module.
 
 ## Install
 
 ```bash
-npm install --save url-plus
+npm install --save url-extra
 ```
 
 ## Usage
 
 ```javascript
-const urlPlus = require('url-plus');
+const urlExtra = require('url-extra');
 
 // do something...
 ```
@@ -25,19 +25,19 @@ const urlPlus = require('url-plus');
 
 ### Methods
 
-### urlPlus.normalize(url)
+### urlExtra.normalize(url)
 
-### urlPlus.join(...)
+### urlExtra.join(...)
 
-### urlPlus.dirname(url)
+### urlExtra.dirname(url)
 
-### urlPlus.extname(url)
+### urlExtra.extname(url)
 
-### urlPlus.basename(url, extname)
+### urlExtra.basename(url, extname)
 
-### urlPlus.basenameNoExt(url)
+### urlExtra.basenameNoExt(url)
 
-### urlPlus.randomQuery(url)
+### urlExtra.randomQuery(url)
 
 ## License
 

@@ -1,102 +1,102 @@
 'use strict';
 
 const tap = require('tap');
-const urlPlus = require('../index');
+const urlExtra = require('../index');
 
-tap.test('urlPlus.normalize', t => {
+tap.test('urlExtra.normalize', t => {
   // should work for simple case
   t.equal(
-    urlPlus.normalize('assets://\\foobar\\hello.fire'),
+    urlExtra.normalize('assets://\\foobar\\hello.fire'),
     'assets://foobar/hello.fire'
   );
 
   // should work for white space case
   t.equal(
-    urlPlus.normalize('assets://\\foo\ bar\\hello.fire'),
+    urlExtra.normalize('assets://\\foo\ bar\\hello.fire'),
     'assets://foo bar/hello.fire'
   );
 
   t.end();
 });
 
-tap.test('urlPlus.join', t => {
+tap.test('urlExtra.join', t => {
   // should be able to join protocol
   t.equal(
-    urlPlus.join('http://www.google.com/', 'foo/bar', '?test=123'),
+    urlExtra.join('http://www.google.com/', 'foo/bar', '?test=123'),
     'http://www.google.com/foo/bar?test=123'
   );
 
   // should be able to join protocol
   t.equal(
-    urlPlus.join('http:', 'www.google.com/', 'foo/bar', '?test=123'),
+    urlExtra.join('http:', 'www.google.com/', 'foo/bar', '?test=123'),
     'http://www.google.com/foo/bar?test=123'
   );
 
   // should remove extra slashes
   t.equal(
-    urlPlus.join('http:', 'www.google.com///', 'foo/bar', '?test=123'),
+    urlExtra.join('http:', 'www.google.com///', 'foo/bar', '?test=123'),
     'http://www.google.com/foo/bar?test=123'
   );
 
   // should support anchors in urls
   t.equal(
-    urlPlus.join('http://', 'www.google.com///', 'foo/bar', '?test=123', '#faaaaa'),
+    urlExtra.join('http://', 'www.google.com///', 'foo/bar', '?test=123', '#faaaaa'),
     'http://www.google.com/foo/bar?test=123#faaaaa'
   );
 
   // should support different protocol
   t.equal(
-    urlPlus.join('assets://', 'foo', '/bar', 'foobar.png'),
+    urlExtra.join('assets://', 'foo', '/bar', 'foobar.png'),
     'assets://foo/bar/foobar.png'
   );
 
   t.end();
 });
 
-tap.test('urlPlus.dirname', t => {
+tap.test('urlExtra.dirname', t => {
   // should work for simple case
   t.equal(
-    urlPlus.dirname('assets://foo/bar/foobar.png'),
+    urlExtra.dirname('assets://foo/bar/foobar.png'),
     'assets://foo/bar'
   );
 
   // should support bare directory
   t.equal(
-    urlPlus.dirname('assets://foo/bar/'),
+    urlExtra.dirname('assets://foo/bar/'),
     'assets://foo'
   );
 
   // should support root directory
   t.equal(
-    urlPlus.dirname('assets://foo/'),
+    urlExtra.dirname('assets://foo/'),
     'assets://'
   );
 
   // should be empty if we pass protocol
   t.equal(
-    urlPlus.dirname('assets://'),
+    urlExtra.dirname('assets://'),
     ''
   );
 
   t.end();
 });
 
-tap.test('urlPlus.basename', t => {
+tap.test('urlExtra.basename', t => {
   // should work for simple case
   t.equal(
-    urlPlus.basename('assets://foo/bar/foobar.png'),
+    urlExtra.basename('assets://foo/bar/foobar.png'),
     'foobar.png'
   );
 
   // should support bare directory
   t.equal(
-    urlPlus.basename('assets://foo/bar/'),
+    urlExtra.basename('assets://foo/bar/'),
     'bar'
   );
 
   // should be protocol name
   t.equal(
-    urlPlus.basename('assets://'),
+    urlExtra.basename('assets://'),
     'assets'
   );
 
