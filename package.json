@@ -1,0 +1,27 @@
+{
+  "name": "url-plus",
+  "version": "1.0.0",
+  "description": "Improved url module.",
+  "scripts": {
+    "test": "tap test/*.spec.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/electron-utils/url-plus.git"
+  },
+  "keywords": [
+    "node",
+    "path",
+    "url"
+  ],
+  "author": "jwu",
+  "license": "MIT",
+  "bugs": {
+    "url": "http://github.com/electron-utils/url-plus/issues"
+  },
+  "homepage": "https://github.com/electron-utils/url-plus",
+  "dependencies": {},
+  "devDependencies": {
+    "tap": "^10.3.0"
+  }
+}
